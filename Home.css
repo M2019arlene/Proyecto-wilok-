@@ -1,0 +1,128 @@
+/* styles.css */
+
+/* Estilo general */
+body {
+    background-color: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Logo y navegación */
+.logo {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    color: #EF8354;
+}
+
+header {
+    background-color: #FFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    display: inline;
+    margin-left: 15px;
+    
+}
+
+.nav-link {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #EF8354;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Fondo y contenido principal */
+.background-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 70px); /* Calcula el espacio menos el header */
+    overflow: hidden;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Sección izquierda: Logo y texto */
+.text-logo-container {
+    max-width: 30%;
+    text-align: left;
+    
+}
+
+.logo-white {
+    width: 300px;
+    height: 300px;
+}
+
+.parrafo{
+
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1.50rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    margin-top: 15px;
+    display:block;
+   
+    
+}
+
+/* Sección derecha: Texto y botones */
+.text-button-container {
+    max-width: 40%;
+    text-align: right;
+}
+
+.header-text {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+.button-container {
+    max-width: 60%;
+    margin-left: auto;
+}
+
+.btn-orange {
+    background-color: #EF8354;
+    color: #FFF;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: 'League Spartan', sans-serif;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+.btn-orange:hover {
+    background-color: #D96E45;
+}
