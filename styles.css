@@ -1,0 +1,83 @@
+/* Fuente global */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa; /* Color de fondo claro para toda la página */
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+  }
+  
+  p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #6c757d; /* Color gris para textos secundarios */
+  }
+  
+  /* Estilo del formulario */
+  form {
+    width: 100%;
+  }
+  
+  form label {
+    font-weight: 500;
+    color: #212529; /* Color negro para etiquetas */
+    font-size: 14px;
+  }
+  
+  form input {
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 30px; /* Borde redondeado */
+    border: 1px solid #ced4da;
+    box-shadow: none;
+  }
+  
+  form input:focus {
+    outline: none;
+    border-color: #f6a524; /* Color de enfoque amarillo */
+    box-shadow: 0 0 5px rgba(246, 165, 36, 0.5);
+  }
+  
+  form button {
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #f6a524 !important; /* Botón naranja */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #e5941e; /* Botón más oscuro al pasar el cursor */
+  }
+  
+  /* Enlace para ingresar */
+  .text-end a {
+    font-weight: bold;
+    color: #f6a524; /* Color naranja */
+    text-decoration: none;
+  }
+  
+  .text-end a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilo de la sección derecha con imagen de fondo */
+  .section-right {
+    background: url('Sin título (1080 x 1350 px) (1).png') no-repeat center center;
+    background-size: cover;
+  }
+  
+  /* Adaptaciones responsive */
+  @media (max-width: 768px) {
+    .section-right {
+      display: none; /* Oculta la imagen de fondo en pantallas pequeñas */
+    }
+  }
+  
