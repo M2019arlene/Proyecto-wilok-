@@ -1,46 +1,94 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wilok - Crear Cuenta</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body class="bg-light">
-  <div class="container-fluid vh-100">
-    <div class="row h-100">
-      <!-- Formulario -->
-      <div class="col-md-6 d-flex align-items-center justify-content-center">
-        <div class="w-75">
-          <p class="text-end text-muted">¿Ya tienes una cuenta? <a href="#" class="text-warning">Ingresar</a></p>
-          <h1 class="fw-bold" style="font-family: 'League Spartan', sans-serif;">Crear cuenta</h1>
-          <p class="text-muted" style="font-family: 'Montserrat', sans-serif;">Bienvenido, por favor regístrate para ingresar</p>
-          <form>
-            <div class="mb-3">
-              <label for="username" class="form-label">Nombre de usuario</label>
-              <input type="text" class="form-control rounded-pill" id="username" placeholder="Fulano De Tal">
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chatbot</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="d-flex vh-100">
+            <!--Lista de usuarios-->
+            <div class="sidebar bg-gradient text-white">
+                <div class="menu-header d-flex justify-content-between align-items-center px-3 py-2">
+                    <i class="fas fa-bars fs-4" id="menu-toggle"></i>
+                    <i class="fas fa-user-plus fs-4" id="add-user-btn"></i>
+                </div>
+                <div class="contact-list">
+                    <div class="contact-item active d-flex align-items-center px-3 py-2">
+                        <img src="caterina.png" alt="Perfil" class="rounded-circle me-3">
+                        <div class="contact-info flex-grow-1">
+                            <strong>Caterina Gómez</strong>
+                            <p class="mb-0">Hola, ¿cómo estás?</p>
+                        </div>
+                        <span class="text-muted small">22:33</span>
+                    </div>
+                    <div class="contact-item d-flex align-items-center px-3 py-2">
+                        <img src="susana.png" alt="Perfil" class="rounded-circle me-3">
+                        <div class="contact-info flex-grow-1">
+                            <strong>Susana Ruiz</strong>
+                            <p class="mb-0">Hola, ¿cómo estás?</p>
+                        </div>
+                        <span class="text-muted small">22:31</span>
+                    </div>
+                    <div class="contact-item d-flex align-items-center px-3 py-2">
+                        <img src="mariana.png" alt="Perfil" class="rounded-circle me-3">
+                        <div class="contact-info flex-grow-1">
+                            <strong>Mariana Lopez</strong>
+                            <p class="mb-0">Hola, ¿cómo estás?</p>
+                        </div>
+                        <span class="text-muted small">20:21</span>
+                    </div>
+                    <div class="contact-item d-flex align-items-center px-3 py-2">
+                        <img src="juan.png" alt="Perfil" class="rounded-circle me-3">
+                        <div class="contact-info flex-grow-1">
+                            <strong>Juan Perez</strong>
+                            <p class="mb-0">Hola, ¿cómo estás?</p>
+                        </div>
+                        <span class="text-muted small">16:44</span>
+                    </div>
+                    <div class="contact-item d-flex align-items-center px-3 py-2">
+                        <img src="maria.png" alt="Perfil" class="rounded-circle me-3">
+                        <div class="contact-info flex-grow-1">
+                            <strong>Maria Ortiz</strong>
+                            <p class="mb-0">Hola, ¿cómo estás?</p>
+                        </div>
+                        <span class="text-muted small">12:09</span>
+                    </div>
+                </div>
             </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Contraseña</label>
-              <input type="password" class="form-control rounded-pill" id="password" placeholder="********">
+
+            <!--chat-->
+            <div class="chat-container d-flex flex-column">
+                <div class="chat-header bg-light d-flex align-items-center px-3 py-2">
+                    <img src="fulano.png" alt="Perfil" class="rounded-circle me-3 profile-img">
+                    <strong>Fulano de tal</strong>
+                    <i class="fas fa-sign-out-alt ms-auto fs-4" id="close-chat-btn"></i>
+                </div>
+
+                <div class="chat-body flex-grow-1 p-3 overflow-auto">
+                    <div class="message bot mb-3">
+                        <div class="message-content p-2 rounded bg-warning text-white">Hola, ¿cómo estás?</div>
+                        <div class="message-time text-end small text-muted">22:29</div>
+                    </div>
+                </div>
+
+                <div class="chat-footer d-flex p-3 bg-light">
+                    <input type="text" id="user-input" class="form-control me-2" placeholder="Escribe un mensaje">
+                    <button id="send-btn" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
             </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control rounded-pill" id="email" placeholder="fulanodetal@gmail.com">
-            </div>
-            <button type="submit" class="btn btn-warning w-100 rounded-pill">Ingresar</button>
-          </form>
         </div>
-      </div>
-      <!-- Imagen de fondo -->
-      <div class="col-md-6 d-none d-md-block" style="background: url('fondosingup.png'); no-repeat center center; background-size: cover;">
-      </div>
-    </div>
-  </div>
-</body>
+
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="script.js"></script>
+    </body>
+
 </html>
