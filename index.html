@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chatbot</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="d-flex vh-100">
+            <!--Lista de usuarios-->
+            <div class="sidebar bg-gradient text-white">
+                <div class="menu-header d-flex justify-content-between align-items-center px-3 py-2">
+                    <i class="fas fa-bars fs-4" id="menu-toggle"></i>
+                    <i class="fas fa-user-plus fs-4" id="add-user-btn"></i>
+                </div>
+                <div class="contact-list">
+                    <div class="contact-item active d-flex align-items-center px-3 py-2">
+                        <img src="caterina.png" alt="Perfil" class="rounded-circle me-3">
+                        <div class="contact-info flex-grow-1">
+                            <strong>Caterina Gómez</strong>
+                            <p class="mb-0">Hola, ¿cómo estás?</p>
+                        </div>
+                        <span class="text-muted small">22:33</span>
+                    </div>
+                    <div class="contact-item d-flex align-items-center px-3 py-2">
+                        <img src="susana.png" alt="Perfil" class="rounded-circle me-3">
+                        <div class="contact-info flex-grow-1">
+                            <strong>Susana Ruiz</strong>
+                            <p class="mb-0">Hola, ¿cómo estás?</p>
+                        </div>
+                        <span class="text-muted small">22:31</span>
+                    </div>
+                    <div class="contact-item d-flex align-items-center px-3 py-2">
+                        <img src="mariana.png" alt="Perfil" class="rounded-circle me-3">
+                        <div class="contact-info flex-grow-1">
+                            <strong>Mariana Lopez</strong>
+                            <p class="mb-0">Hola, ¿cómo estás?</p>
+                        </div>
+                        <span class="text-muted small">20:21</span>
+                    </div>
+                    <div class="contact-item d-flex align-items-center px-3 py-2">
+                        <img src="juan.png" alt="Perfil" class="rounded-circle me-3">
+                        <div class="contact-info flex-grow-1">
+                            <strong>Juan Perez</strong>
+                            <p class="mb-0">Hola, ¿cómo estás?</p>
+                        </div>
+                        <span class="text-muted small">16:44</span>
+                    </div>
+                    <div class="contact-item d-flex align-items-center px-3 py-2">
+                        <img src="maria.png" alt="Perfil" class="rounded-circle me-3">
+                        <div class="contact-info flex-grow-1">
+                            <strong>Maria Ortiz</strong>
+                            <p class="mb-0">Hola, ¿cómo estás?</p>
+                        </div>
+                        <span class="text-muted small">12:09</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--chat-->
+            <div class="chat-container d-flex flex-column">
+                <div class="chat-header bg-light d-flex align-items-center px-3 py-2">
+                    <img src="fulano.png" alt="Perfil" class="rounded-circle me-3 profile-img">
+                    <strong>Fulano de tal</strong>
+                    <i class="fas fa-sign-out-alt ms-auto fs-4" id="close-chat-btn"></i>
+                </div>
+
+                <div class="chat-body flex-grow-1 p-3 overflow-auto">
+                    <div class="message bot mb-3">
+                        <div class="message-content p-2 rounded bg-warning text-white">Hola, ¿cómo estás?</div>
+                        <div class="message-time text-end small text-muted">22:29</div>
+                    </div>
+                </div>
+
+                <div class="chat-footer d-flex p-3 bg-light">
+                    <input type="text" id="user-input" class="form-control me-2" placeholder="Escribe un mensaje">
+                    <button id="send-btn" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="script.js"></script>
+    </body>
+
+</html>
