@@ -1,0 +1,289 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+}
+/* Sidebar */
+.sidebar {
+    width: 30%;
+    max-width: 450px;
+    background: linear-gradient(90deg, #ff914d, #f86c6c) !important;
+    color: black;
+    overflow-y: auto;
+    
+}
+
+/*hamburguesa*/
+.menu-header i, .btn-secondary {
+    cursor: pointer;
+    color: black;
+    background-color: transparent; 
+    border: none;
+    font-size: 1.2rem;
+    --bs-btn-active-bg: transparent
+}
+
+.btn-secondary:hover{
+    background-color: transparent;
+}
+
+.btn:hover{
+    color: black;
+}
+
+.dropdown-menu{
+    backdrop-filter: blur(5px); 
+    background: rgba(51, 51, 51, 0.6);
+}
+
+.dropdown-item{
+    background-color: transparent;
+}
+
+.dropdown-item:hover{
+    background-color: rgba(41, 40, 40, 0.6);
+}
+
+/* lista de contactos */
+.contact-list {
+    overflow-y: auto;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+/* estado de conexion */
+.perfil-container {
+    position: relative;
+    display: inline-block;
+}
+
+.estado-de-conexion{
+    position: absolute;
+    bottom: 0px;
+    right: 18px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.online{
+    background-color: #4CAF50;
+}
+
+.offline{
+    background-color: #F44336;
+}
+
+/* hover al pasar por contactos */
+.contact-item:hover{ 
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* seleccion contacto corregida */
+.selected{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-info p {
+    font-size: 0.85em;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+/* pantalla incio */
+#pantalla-inicial {
+    text-align: center;
+    background-color: #f5f5f5;
+    color: #555;
+}
+
+.chat-body, .chat-footer {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Chat */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-body {
+    background-color: #f5f5f5;
+}
+
+.message-content {
+    display: inline-block;
+    max-width: 70%;
+}
+
+.message-time {
+    margin-top: 5px;
+}
+
+.message.bot .message-content {
+    background-color: #ff914d !important;
+    color: white;
+}
+
+.message.user .message-content {
+    background-color: #bfc0c0 !important;
+    color: black;
+}
+
+.chat-footer {
+    border-top: 1px solid #ddd;
+}
+
+/*botones
+
+añadir usuario*/
+#add-user-btn {
+    font-size: 1.5em;
+    color: #333;
+    cursor: pointer;
+}
+
+/* cierre de sesion */
+#close-chat-btn {
+    color: white;
+    cursor: pointer;
+}
+
+/* hover de los botones */
+#add-user-btn:hover {
+    color: #ffff;
+}
+
+#close-chat-btn:hover{
+    color: #ff7b54;
+}
+
+#menu-toggle {
+    color: #333;
+}
+
+/* boton enviar */
+.btn-primary {
+    background-color: #333; 
+    border-color: #333; 
+}
+
+.btn-primary:hover {
+    background-color: #ff7b54; 
+    border-color: #ff7b54; 
+}
+
+#user-input:focus {
+    border-color: #ff7b54;  
+    box-shadow: 0 0 5px rgba(255, 123, 84, 0.5); 
+}
+
+@media (max-width: 767px) {
+    .sidebar {
+        width: 100%;
+        max-width: none;
+        height: auto;
+        position: relative;
+    }
+    
+    .contact-item img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .chat-container {
+        flex-direction: column;
+    }
+    
+    .chat-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    
+    .chat-footer {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    #user-input {
+        width: 100%;
+    }
+    
+    #add-user-btn, #close-chat-btn {
+        font-size: 1.2em;
+    }
+}
+
+/* Para pantallas de tablet (768px a 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .sidebar {
+        width: 50%;
+    }
+
+    .contact-item img {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .contact-item {
+        padding: 12px;
+    }
+    
+    .chat-container {
+        flex-direction: column;
+    }
+
+    .chat-footer {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Para pantallas grandes (1025px en adelante) */
+@media (min-width: 1025px) {
+    .sidebar {
+        width: 30%;
+        max-width: 450px;
+    }
+
+    .contact-item img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .contact-item {
+        padding: 15px;
+    }
+    
+    .chat-container {
+        flex-direction: column;
+    }
+
+    .chat-footer {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+}
