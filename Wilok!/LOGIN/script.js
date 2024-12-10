@@ -13,7 +13,7 @@ const usuarioValido = {
     
       alert("¡Bienvenido!");
     
-      window.location.href = "file:///C:/Users/mediapiladmin/Desktop/mediapila/Wilok!/LOGIN/chatt/index.html";
+      window.location.href = "./chatt/index.html"
     } else {
       
       alert("Usuario o contraseña incorrectos.");

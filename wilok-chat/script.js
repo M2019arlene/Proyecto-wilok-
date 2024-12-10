@@ -47,7 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Función para cerrar el chat
     closeChatBtn.addEventListener("click", () => {
-        window.location.href = '/'; // Salir del chat (redirigir a home)
+        console.log("entro")
+        window.location.href = './Wilok!/index.html'; // Salir del chat (redirigir a home)
     });
 });
 
