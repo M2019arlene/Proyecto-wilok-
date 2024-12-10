@@ -47,8 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Función para cerrar el chat
     closeChatBtn.addEventListener("click", () => {
-        console.log("entro")
-        window.location.href = './Wilok!/index.html'; // Salir del chat (redirigir a home)
+        window.location.href = '/'; // Salir del chat (redirigir a home)
     });
 });
 
@@ -122,11 +121,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const chatHeader = document.querySelector(".chat-header");
     const profileImg = chatHeader.querySelector("img");
     const profileName = chatHeader.querySelector("strong");
+    const sidebar = document.querySelector(".sidebar");
+    const backBtn = document.getElementById("back-btn"); 
+
+    
+    backBtn.classList.add("btn", "btn-secondary", "d-none");
+    backBtn.innerHTML = '<i class="fas fa-arrow-left"></i> Atrás';
+    chatHeader.prepend(backBtn); 
 
     function mostrarPantallaInicial() {
         pantallaInicial.classList.remove("d-none");
         chatBody.classList.add("d-none");
         chatFooter.classList.add("d-none");
+        sidebar.classList.remove("hidden"); 
+        backBtn.classList.add("d-none"); 
     }
 
     function mostrarChat(contacto) {
@@ -140,10 +148,33 @@ document.addEventListener("DOMContentLoaded", () => {
         pantallaInicial.classList.add("d-none");
         chatBody.classList.remove("d-none");
         chatFooter.classList.remove("d-none");
+        sidebar.classList.add("hidden"); 
+        backBtn.classList.remove("d-none"); 
     }
 
+    function togglePantallaInicial() {
+        if (window.innerWidth <= 800) {
+            pantallaInicial.classList.add("d-none"); 
+        } else {
+            if (![...contactos].some(contacto => contacto.classList.contains("selected"))) {
+                mostrarPantallaInicial(); 
+            }
+        }
+    }
+
+    
+    backBtn.addEventListener("click", () => {
+        mostrarPantallaInicial();
+        contactos.forEach(contacto => contacto.classList.remove("selected")); // Desseleccionar contactos
+    });
+
+    
     mostrarPantallaInicial();
 
+    
+    window.addEventListener("resize", togglePantallaInicial);
+
+    
     contactos.forEach(contacto => {
         contacto.addEventListener("click", () => {
             contactos.forEach(c => c.classList.remove("selected"));
@@ -151,6 +182,9 @@ document.addEventListener("DOMContentLoaded", () => {
             mostrarChat(contacto);
         });
     });
+
+    
+    togglePantallaInicial();
 });
 
 // estado de conexion
@@ -165,5 +199,6 @@ document.addEventListener("DOMContentLoaded", () => {
         estadoDeConexion.classList.add(estado); 
     });
 });
+
 
 
